@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text to HTML convertor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/txt2htm/static/txt2htm/style.css">
+</head>
+<body>
+
+<div class="container-fluid hero d-flex align-items-center justify-content-center">
+            <div class="text-center">
+                <h1 class="display-1 mb-0">TEXT to HTML Generator</h1>
+            </div>
+        </div>
+
+<div class="container-fluid"
+            <div class="row">
+                <div class="m-md-auto">
+                    <h4> WYSIWYG Editor !</h4>
+                    <form action="{% url 'txt2htm:create' %}" method="post">
+                        {% csrf_token %}
+                        {{ form.media }}
+                        {{ form.as_p }}
+                        <input type="submit" value="Convert">
+                    </form>
+                </div>
+            </div>
+</div>
+</body>
+</html>
